@@ -3,7 +3,7 @@
 This repository contains my solutions to LeetCode problems.
 Each solution includes:
 - Problem description
-- Our Apporach
-- Alternaive
+- Our Approach
+- Alternaive Approach (if any)
 - Pattern used
 - Time & space complexity
