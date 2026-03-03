@@ -17,6 +17,9 @@ Our Approach:
 - All elements beyond 'j' is unwanted
 - When the loop ends, indices [0 ... i-1] contain all valid elements.
 
+(Easier thinking)
+Another way of thinking in this problem is that We have to place all the 'val' at as last as possible
+
 Time Complexity: O(n)
 Space Complexity: O(1)
 */
