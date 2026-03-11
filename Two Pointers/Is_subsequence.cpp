@@ -1,5 +1,6 @@
 /*
-Problem: 392. Is subsequence 
+Problem: 392. Is subsequence
+
 Problem Description:
 Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
 A subsequence of a string is a new string that is formed from the original string 

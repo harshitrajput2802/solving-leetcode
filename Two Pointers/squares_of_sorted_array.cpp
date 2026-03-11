@@ -1,6 +1,11 @@
 /*
 Problem: 977. Squares of Sorted Array
 
+Problem Description:
+Given an integer array nums sorted in non-decreasing order,
+return an array of the squares of each number sorted in non-decreasing order.
+
+
 Brute Force:
  - store the square of each element as per their indices in another array then sort the array
  Time Complexity: O(n logn)

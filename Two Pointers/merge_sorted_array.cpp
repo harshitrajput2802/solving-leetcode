@@ -1,6 +1,10 @@
 /*
 Problem: 88. Merge Sorted Array
 
+Problem Description:
+We have two integer arrays nums1 and nums2, sorted in non-decreasing order.
+Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+
 Our Approach:
 - Use two pointers and place them at the start of both the sorted arrays
 - Check the element which is smaller in both the array and place it into merged array
@@ -10,6 +14,7 @@ Our Approach:
 Time Complexity: O(m+n)
 Space Complexity: O(m+n)
 */
+
 class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
