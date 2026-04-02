@@ -12,7 +12,7 @@ Our Approach(Sliding Window):
 - Calculate the sum of first k elements => This will be our window
 - check if sum >= targetSum then increment count
 - Use a loop starting from index k to the end of the array,
-    add new element and remove thhe old one -> sliding the window
+    add new element and remove the old one -> sliding the window
 - after each slide, check if (sum >= targetSum) then increment count
 - At the end we will have the count of number of subarrays so it will be returned
 
