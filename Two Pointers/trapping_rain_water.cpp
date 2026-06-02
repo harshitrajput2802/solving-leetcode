@@ -14,11 +14,45 @@ Brute Force:
 Time Complexity: O(n^2)     Space Complexity: O(1)
 
 Better Approach: (Prefix Sum)
-- Create two arrays leftMax[] and rightMax[] and for each bar store the left maximum height and right maximum height in respective arrays
+- Create two arrays leftMax[] and rightMax[] and for each bar store the 
+    left maximum height and right maximum height in respective arrays
 - Now at each index calculate the water trapped and find the total sum
 Time Complexity: O(n)     Space Complexity: O(n)
+*/
 
-Our Approach: (Two Pointers)
+class Solution {
+public:
+    int trap(vector<int>& height) {
+
+        int n = height.size();
+        std::vector<int> leftMax(n);
+        leftMax[0] = height[0];
+        for (int i = 1; i < n; i++) {
+            if (height[i] > leftMax[i - 1])
+                leftMax[i] = height[i];
+            else
+                leftMax[i] = leftMax[i - 1];
+        }
+
+        std::vector<int> rightMax(n);
+        rightMax[n - 1] = height[n - 1];
+        for (int i = n - 2; i > 0; i--) {
+            if (height[i] > rightMax[i + 1])
+                rightMax[i] = height[i];
+            else
+                rightMax[i] = rightMax[i + 1];
+        }
+
+        int water = 0;
+        for (int i = 1; i < n - 1; i++) {
+            water += std::min(leftMax[i], rightMax[i]) - height[i];
+        }
+        return water;
+    }
+};
+
+/*
+More better Approach: (Two Pointers)
  One important obsvation is that Water depends only on smaller of leftMax and rightMax.
  So we don't need BOTH values at all times.
 - Use two pointers (left, right) starting from both ends and maintain:
