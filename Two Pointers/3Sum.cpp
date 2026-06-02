@@ -33,7 +33,7 @@ class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
         std::vector<vector<int>> triplets;
-        int count = 0;
+
         std::sort(nums.begin(), nums.end());
         int n = nums.size();
 

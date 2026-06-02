@@ -1,5 +1,5 @@
 /*
-Problem: 344. Reverse String
+Problem: 125. Valid Palindrome
 
 Problem Description:
 A phrase is a palindrome if, after converting all uppercase letters into lowercase letters
@@ -20,11 +20,32 @@ Space Complexity: O(1)
 
 class Solution {
 public:
-    void reverseString(vector<char>& s) {
+    bool isPalindrome(string s) {
         int sz = s.size();
-        int i = 0, j = sz - 1;
-        while (i < j) {
-            swap(s[i++], s[j--]);
+        int low = 0, high = sz - 1;
+        while (low <= high) {
+            char char_at_i = std::tolower(s[low]);
+            char char_at_j = std::tolower(s[high]);
+
+            if (!std::isalnum(char_at_i)) { // return true if there is aplhabet
+                low++;
+                continue;
+            }
+            if (!std::isalnum(char_at_j)) {
+                high--;
+                continue;
+            }
+            if (char_at_i != char_at_j)
+                return false;
+
+            low++;
+            high--;
         }
+        return true;
     }
 };
+/*
+1. convert to lower case
+2. agar alphabet nhi h to skip krna h
+3. fir check krna h equal h ya nhi
+*/

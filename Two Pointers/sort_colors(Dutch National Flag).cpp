@@ -19,8 +19,9 @@ Our Approach (Dutch National Flag Algorithm):
     mid -> for current element
 - We'll traverse the array until mid <= high:
     if 0 is found then we will swap it with low pointer element;        increment low and mid
-    if 2 is found then we will swap it with high pointer element;       decrement high only and mid
+    if 2 is found then we will swap it with high pointer element;       decrement high only and not mid
     else(1), we will do nothing as it is in correct relative position;  increment mid only
+
 - we don't increment mid when we swap with high because the element coming from high is unknown
     (we may swap 2(from higher side) and place it in lower side) -> so we have to check it again
 

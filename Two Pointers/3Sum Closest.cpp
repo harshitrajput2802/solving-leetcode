@@ -10,8 +10,8 @@ nums.length >= 3
 
 
 Our Approach: (Two Pointers)
-- we have to find the sum of three integer whose sum is closest to the target 
-    ,i.e, difference between their sum and target should bbe minimun
+- we have to find the sum of three integer whose sum is closest to the target ,
+     i.e, difference between their sum and target should bbe minimun
 - we will keep track the minimum-sum 
 - sort the array to enable the two-pointer technique
 - We will just use the 3 Sum logic to calculate the sum

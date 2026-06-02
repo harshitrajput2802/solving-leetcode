@@ -63,3 +63,44 @@ public:
         }
     }
 };
+
+
+
+//  Alternate approach : 
+
+/*
+- Initialize three pointers at the ends of the valid elements in nums1 and nums2, 
+    and one at the very end of nums1 (to write back elements)
+- Compare elements from back to front to find the larger value between both arrays.
+- Place the larger element into the back of nums1 to overwrite unused space safely without extra memory.
+- Copy any remaining elements from nums2 into nums1 if nums2 is not fully exhausted.
+  
+  This solution is more efficient
+Time Complexity: O(m+n)
+Space Complexity: O(1)
+*/
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        int k = m + n - 1;
+        int i = m - 1, j = n - 1;
+
+        while (i >= 0 && j >= 0) {
+            if (nums1[i] <= nums2[j]) {
+                nums1[k] = nums2[j];
+                j--;
+            }
+            else {
+                nums1[k] = nums1[i];
+                i--;
+            }
+            k--;
+        }
+
+        while (j >= 0) {
+            nums1[k] = nums2[j];
+            k--;
+            j--;
+        }
+    }
+};
